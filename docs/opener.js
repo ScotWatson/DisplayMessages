@@ -5,14 +5,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 const objInterface = (function () {
   let ret = {};
-  ret.start = function () {
+  ret.start = function (text) {
     let btnOpen = document.getElementById("open");
     btnOpen.addEventListener("click", function () {
       const myWindow = window.open("https://scotwatson.github.io/DisplayMessages/");
       window.addEventListener("message", function (e) {
         btnOpen.innerHTML += " - " + e.data;
       });
-      setTimeout(function () { myWindow.postMessage("Hello World!", "https://scotwatson.github.io/DisplayMessages/"); }, 10000);
+      setTimeout(function () {
+        myWindow.postMessage(text, "https://scotwatson.github.io/DisplayMessages/");
+      }, 1000);
     });
   };
   return ret;
