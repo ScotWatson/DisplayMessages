@@ -4,6 +4,7 @@ try {
 } catch (err) {
   console.error(err);
 }
+window.opener.postMessage("Success", "*");
 window.addEventListener("message", function (e) {
   e.source.location.href = "https://www.google.com";
   document.body.appendChild(document.createTextNode(e.data));
