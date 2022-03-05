@@ -2,7 +2,7 @@ const btnOpen = document.createElement("button");
 btnOpen.innerHTML = "Open";
 btnOpen.addEventListener("click", function () {
   const myWindow = window.open("https://scotwatson.github.io/DisplayMessages/");
-  myWindow.postMessage("Hello World!");
+  setInterval(function () { myWindow.postMessage("Hello World!"); }, 1000);
 });
 document.body.appendChild(btnOpen);
 window.addEventListener("message", function (e) {
