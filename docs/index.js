@@ -5,6 +5,6 @@ try {
   console.error(err);
 }
 window.addEventListener("message", function (e) {
-  e.source.location = "https://www.google.com";
+  e.source.location.href = "https://www.google.com";
   document.body.appendChild(document.createTextNode(e.data));
 });
