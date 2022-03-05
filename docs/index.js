@@ -1,11 +1,10 @@
 console.log(window.opener)
 try {
-  window.opener.location.href = "https://www.google.com";
+  console.log(window.opener.location.href);
 } catch (err) {
   console.error(err);
 }
 window.opener.postMessage("Success", "*");
 window.addEventListener("message", function (e) {
-  e.source.location.href = "https://www.google.com";
-  document.body.appendChild(document.createTextNode(e.data));
+  document.body.innerHTML += e.data;
 });
