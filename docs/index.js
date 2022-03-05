@@ -6,5 +6,6 @@ btnOpen.addEventListener("click", function () {
 });
 document.body.appendChild(btnOpen);
 window.addEventListener("message", function (e) {
+  console.log(e);
   document.body.appendChild(document.createTextNode(e.data));
 });
